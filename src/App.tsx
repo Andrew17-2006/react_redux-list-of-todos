@@ -9,19 +9,18 @@ import { TodoModal } from './components/TodoModal';
 import { Loader } from './components/Loader';
 import { getTodos } from './api';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from './app/store';
+import { useAppDispatch, useAppSelector } from '../src/app/hooks/hooks';
 
 import { setTodos } from './features/todos';
 import { setCurrentTodo } from './features/currentTodo';
 import { setStatus, setQuery, clearQuery } from './features/filter';
 
 export const App: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const todos = useSelector((state: RootState) => state.todos);
-  const selectedTodo = useSelector((state: RootState) => state.currentTodo);
-  const { status, query } = useSelector((state: RootState) => state.filter);
+  const todos = useAppSelector(state => state.todos);
+  const selectedTodo = useAppSelector(state => state.currentTodo);
+  const { status, query } = useAppSelector(state => state.filter);
 
   //локальні стейти
   const [loader, setLoader] = useState(false);
