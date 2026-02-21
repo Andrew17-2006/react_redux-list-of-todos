@@ -5,7 +5,7 @@ import cn from 'classnames';
 type Props = {
   todos: Todo[];
   selectedTodo: Todo | null;
-  onSelect: (todo: Todo) => void;
+  onSelect: (todo: Todo | null) => void;
 };
 
 export const TodoList: React.FC<Props> = ({
@@ -62,7 +62,7 @@ export const TodoList: React.FC<Props> = ({
                 data-cy="hideButton"
                 className="button"
                 type="button"
-                onClick={() => onSelect(todo)}
+                onClick={() => onSelect(null)}
               >
                 <span className="icon">
                   <i className="far fa-eye-slash" />

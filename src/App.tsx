@@ -9,7 +9,7 @@ import { TodoModal } from './components/TodoModal';
 import { Loader } from './components/Loader';
 import { getTodos } from './api';
 
-import { useAppDispatch, useAppSelector } from '../src/app/hooks/hooks';
+import { useAppDispatch, useAppSelector } from './app/hooks';
 
 import { setTodos } from './features/todos';
 import { setCurrentTodo } from './features/currentTodo';
